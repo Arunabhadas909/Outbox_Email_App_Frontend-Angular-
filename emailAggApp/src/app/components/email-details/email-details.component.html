@@ -1,0 +1,42 @@
+<!-- <div *ngIf="email; else noEmail" >
+  <h4>{{ email.subject }}</h4>
+  <p><strong>From:</strong> {{ email.from }}</p>
+  <p><strong>Date:</strong> {{ email.date }}</p>
+
+  <div class="border rounded p-3 mt-3 bg-light">
+    <p>{{email.text}}</p>
+  </div>
+</div>
+
+<ng-template #noEmail>
+  <p class="text-muted">Select an email to view details</p>
+</ng-template> -->
+
+<div *ngIf="email; else noEmail">
+  <h4 class="mb-2">{{ email.subject }}</h4>
+  <p><strong>From:</strong> {{ email.from }}</p>
+  <p><strong>Date:</strong> {{ email.date }}</p>
+
+  <div class="border rounded bg-light p-3 mt-3" style="white-space: pre-line;">
+    {{ email.text }}
+  </div>
+</div>
+
+<ng-template #noEmail>
+  <div class="text-muted text-center mt-5">
+    <i class="bi bi-envelope-open" style="font-size: 2rem;"></i>
+    <p class="mt-2">Select an email to view details</p>
+  </div>
+</ng-template>
+
+
+
+<button class="btn btn-primary mt-2" (click)="getSuggestedReply(email.text)">
+  💡 Suggest Reply
+</button>
+
+<div *ngIf="suggestedReply" class="alert alert-success mt-2">
+  <strong>AI Suggestion:</strong>
+  <p>{{ suggestedReply }}</p>
+</div>
+

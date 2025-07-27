@@ -1,0 +1,18 @@
+<!-- <h5 class="mb-3">Inbox</h5>
+<div *ngFor="let email of emails" class="card mb-2 p-2 shadow-sm" (click)="selectEmail.emit(email)" style="cursor: pointer;">
+  <h6>{{ email.subject }}</h6>
+  <small class="text-muted">{{ email.from }} — {{ email.date }}</small>
+</div> -->
+
+
+<div *ngFor="let email of emails" 
+     class="card mb-2 shadow-sm border-0" 
+     style="cursor: pointer;" 
+     (click)="selectEmail.emit(email)">
+  <div class="card-body p-2">
+    <h6 class="card-title text-truncate mb-1">{{ email.subject }}</h6>
+    <small class="text-muted d-block text-truncate">
+      {{ email.from }} — {{ email.date }}
+    </small>
+  </div>
+</div>
