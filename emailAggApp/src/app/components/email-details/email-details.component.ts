@@ -21,7 +21,7 @@ export class EmailDetailsComponent {
 getSuggestedReply(emailText: string | undefined) {
   if (!emailText) return;
 
-  this.http.post<{ reply: string }>('http://localhost:3000/api/suggest-reply', {
+  this.http.post<{ reply: string }>('https://outbox-email-app-backend.onrender.com/suggest-reply', {
     emailText: emailText,
   }).subscribe((res) => {
     this.suggestedReply = res.reply;
