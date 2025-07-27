@@ -1,0 +1,6 @@
+[build]
+  command = "npm install -g @angular/cli && npm install && ng build --configuration=production"
+  publish = "dist/email-agg-app"
+
+[build.environment]
+  NODE_VERSION = "18"
