@@ -1,0 +1,7 @@
+[build]
+  base = "emailAggApp"
+  command = "npm run build -- --configuration=production"
+  publish = "emailAggApp/dist/emailAggApp"
+
+[build.environment]
+  NODE_VERSION = "18"
